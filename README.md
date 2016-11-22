@@ -4,15 +4,15 @@
 # Git bisect exercise
 
 The script `get_pi.py` calculates pi using the 100 first terms of the
-Nilakantha series. It should produce 3.141592 but it does not. It produces
-3.264592 using the last commit:
+Nilakantha series. It should produce 3.141592 but it does not. The script broke
+and produces 3.264592 using the last commit:
 ```
 $ python get_pi.py
 
 3.2645924109719804
 ```
 
-At each commit, the 100 terms were reshuffled. At some point within the 1000
+At each commit, the 100 terms were reshuffled. At some point within the 500
 first commits, an error was introduced. The only thing we know is that the
 first commit worked correctly.
 
@@ -22,7 +22,7 @@ first commit worked correctly.
 Use `git bisect` to find the commit which broke the computation.
 
 
-## Bonus task
+## Bonus exercise
 
 Write a script that checks for a correct result and use `git bisect run` to
 find the offending commit automatically.
